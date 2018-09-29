@@ -1,24 +1,29 @@
 <template>
-    <div id="app">
-      <img src="./assets/logo.png">
-      <router-view/>
-    </div>
-  </template>
-  
-  <script>
+  <div id="app">
+    <mt-header title="long long long long title">
+      <router-link to="/" slot="left">
+        <mt-button icon="back">back</mt-button>
+      </router-link>
+      <mt-button icon="more" slot="right"></mt-button>
+    </mt-header>
+    <router-view />
+  </div>
+</template>
+
+<script>
+
+
   export default {
     name: 'App'
   }
-  </script>
-  
-  <style>
+</script>
+
+<style>
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
-    margin-top: 60px;
   }
-  </style>
-  
+</style>

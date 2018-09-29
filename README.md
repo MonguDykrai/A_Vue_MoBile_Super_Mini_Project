@@ -37,3 +37,50 @@ fetch('http://www.liulongbin.top:3005/api/getnewslist')
     console.log(data.message);
   })
 ```
+
+## Technology stack
+
+[mint-ui](http://mint-ui.github.io/#!/en)
+
+## babel-plugin-component
+
+```json
+{
+  "presets": [
+    [
+      "env",
+      {
+        "modules": false,
+        "targets": {
+          "browsers": [
+            "> 1%",
+            "last 2 versions",
+            "not ie <= 8"
+          ]
+        }
+      }
+    ],
+    "stage-2"
+  ],
+  "plugins": [
+    "transform-vue-jsx",
+    "transform-runtime",
+    // import style automatically
+    [
+      "component",
+      {
+        "libraryName": "mint-ui",
+        "style": true
+      }
+    ]
+  ],
+  "env": {
+    "test": {
+      "presets": [
+        "env",
+        "stage-2"
+      ]
+    }
+  }
+}
+```

@@ -3,6 +3,10 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import { Header } from 'mint-ui'
+import './assets/css/reset.css'
+
+Vue.component(Header.name, Header)
 
 Vue.config.productionTip = false
 
