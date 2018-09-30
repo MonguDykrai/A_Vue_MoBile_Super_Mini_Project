@@ -84,3 +84,39 @@ fetch('http://www.liulongbin.top:3005/api/getnewslist')
   }
 }
 ```
+
+## static file
+
+静态资源需要放到 static 文件夹下，否则也需要进行路由匹配 ( Static resources need to be placed in the static folder, otherwise, route matching is required. )
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>a_mobile_super_mini_project</title>
+  <link rel="shortcut icon" href="./static/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="./static/iconfont.css">
+</head>
+
+<body>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+</body>
+
+</html>
+```
+
+## iconfont.cn
+
+Using the iconfont downloaded from iconfont.cn
+
+## BUG-001
+
+```css
+.mint-tab-item-label {
+  font-size: 11px; /* 为啥不管用 */
+}
+```

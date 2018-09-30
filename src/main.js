@@ -3,10 +3,14 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import { Header } from 'mint-ui'
 import './assets/css/reset.css'
 
+import { Header, Button, Tabbar, TabItem } from 'mint-ui'
+
 Vue.component(Header.name, Header)
+Vue.component(Button.name, Button)
+Vue.component(Tabbar.name, Tabbar)
+Vue.component(TabItem.name, TabItem)
 
 Vue.config.productionTip = false
 
