@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <mt-header title="無題" :style="{fontFamily: 'Microsoft YaHei Light'}">
+    <mt-header title="無題" :style="{fontFamily: 'Microsoft YaHei Light'}" :class="{'is-fixed': fixed}" :fixed="fixed">
       <router-link to="/" slot="left">
         <mt-button icon="back"></mt-button>
       </router-link>
@@ -8,7 +8,8 @@
 
     <router-view />
 
-    <mt-tabbar v-model="selected">
+    <mt-tabbar v-model="selected" :class="{'is-fixed': fixed}" :fixed="fixed">
+      <!-- v-model="selected" cannot be deleted -->
       <mt-tab-item id="iHome">
         <i slot="icon" class="iconfont icon-ioshomeoutline"></i>
         Home
@@ -26,6 +27,7 @@
         Search
       </mt-tab-item>
     </mt-tabbar>
+
   </div>
 </template>
 
@@ -35,7 +37,8 @@
     name: 'App',
     data: function () {
       return {
-        selected: null
+        selected: null, // value of selected tab-item's id, name can be anything (e.g. value)
+        fixed: true
       }
     }
   }
@@ -62,11 +65,17 @@
     padding: 5px 0;
   }
 
+
+  .mint-tabbar>.mint-tab-item.is-selected {
+    background-color: inherit;
+  }
+
   .mint-tab-item-icon>* {
     font-size: 24px;
   }
 
   .mint-tab-item-label {
-    font-size: 11px; /* 为啥不管用 */
+    font-size: 11px;
+    /* 为啥不管用 */
   }
 </style>

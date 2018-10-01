@@ -120,3 +120,86 @@ Using the iconfont downloaded from iconfont.cn
   font-size: 11px; /* 为啥不管用 */
 }
 ```
+
+## BUG-002
+
+On the mobile phone side, while clicking the tab item, the background color will flash.
+
+## mt-tab-item
+
+```js
+/***/ 177:
+/***/ function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('a', {
+    staticClass: "mint-tab-item",
+    class: {
+      // <a data-v-7ba5bd90="" class="mint-tab-item is-selected">
+      // _vm.$parent.value derived from <mt-tabbar v-model="selected">
+      // The value will be dynamically changed when which link has been clicked ( id of component mt-tab-item )
+      'is-selected': _vm.$parent.value === _vm.id
+    },
+    on: {
+      "click": function($event) {
+        // value of selected derived from _vm.id
+        // @click="$parent.$emit('input', id)" <- tab-item.vue
+        _vm.$parent.$emit('input', _vm.id)
+      }
+    }
+  }, [_c('div', {
+    staticClass: "mint-tab-item-icon"
+  }, [_vm._t("icon")], 2), _vm._v(" "), _c('div', {
+    staticClass: "mint-tab-item-label"
+  }, [_vm._t("default")], 2)])
+},staticRenderFns: []}
+```
+
+![](./memo/images/mt-tabbar-attr-selected.gif)
+
+## Passing Static or Dynamic Props
+
+<https://vuejs.org/v2/guide/components-props.html#Passing-Static-or-Dynamic-Props>
+
+```html
+<!-- App.vue -->
+<mt-tabbar v-model="selected" :class="{'is-fixed': fixed}" :fixed="fixed">
+
+<script>
+
+  export default {
+    name: 'App',
+    data: function () {
+      return {
+        selected: null,
+        fixed: true
+      }
+    }
+  }
+</script>
+
+<!-- tabbar.vue -->
+<script>
+export default {
+  name: 'mt-tabbar',
+
+  props: {
+    fixed: Boolean, // value derived from :fixed="fixed"
+    value: {} // value derived from v-model
+  }
+};
+</script>
+```
+
+![](./memo/images/passing-dynamic-props.gif)
+
+## add padding-top and padding-bottom for route content
+
+```css
+.hello[data-v-469af010] {
+    padding-top: 40px;
+    padding-bottom: 51px;
+}
+```
+
+![](./memo/images/adding-padding-for-route-content.gif)
