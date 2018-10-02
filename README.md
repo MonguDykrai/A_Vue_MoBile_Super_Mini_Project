@@ -203,3 +203,142 @@ export default {
 ```
 
 ![](./memo/images/adding-padding-for-route-content.gif)
+
+## Vue instance router property
+
+<https://vuejs.org/v2/guide/migration-vue-router.html#Router-Initialization>
+
+```js
+new Vue({
+  el: '#app',
+  router: router, // Router Initialization
+  template: '<router-view></router-view>'
+})
+```
+
+## vm.$mount()
+
+<https://vuejs.org/v2/api/#el>
+
+<https://48y127owv7.codesandbox.io>
+
+Provide the Vue instance an existing DOM element to mount on. It can be a CSS selector string or an actual HTMLElement.
+
+After the instance is mounted, the resolved element will be accessible as vm.$el.
+
+If this option is available at instantiation, the instance will immediately enter compilation; otherwise, the user will have to explicitly call **vm.$mount()** to manually start the compilation.
+
+## Vue router demo
+
+<https://codesandbox.io/s/48y127owv7>
+
+## Click the relevant link to show the relevant component content ( 单击相关链接以显示相关组件内容 )
+
+<https://blog.csdn.net/wandoumm/article/details/80166414>
+
+Use watch property to listening to the changing of the component id ( 使用 watch 监听组件 id 值的变化 )
+
+### Programmatic Navigation
+
+<https://router.vuejs.org/guide/essentials/navigation.html>
+
+Inside of a Vue instance, you have access to the router instance as $router.
+
+```js
+watch: {
+  // Which link has been clicked
+  selected: function (newVal) {
+    let compID = newVal
+    switch (compID) {
+      case 'iHome':
+        console.log(this.$route) // {name: "HelloWorld", meta: {…}, path: "/", hash: "", query: {…}, …}
+        console.log(this.$router) // access to the router instance ( VueRouter {app: Vue ...} )
+        console.log('iHome')
+        break;
+    }
+  }
+}
+
+```
+
+### Router Construction Options
+
+<https://router.vuejs.org/api/#router-construction-options>
+
+```js
+declare type RouteConfig = {
+  path: string;
+  component?: Component;
+  name?: string; // for named routes
+  components?: { [name: string]: Component }; // for named views
+  redirect?: string | Location | Function;
+  props?: boolean | string | Function;
+  alias?: string | Array<string>;
+  children?: Array<RouteConfig>; // for nested routes
+  beforeEnter?: (to: Route, from: Route, next: Function) => void;
+  meta?: any;
+
+  // 2.6.0+
+  caseSensitive?: boolean; // use case sensitive match? (default: false)
+  pathToRegexpOptions?: Object; // path-to-regexp options for compiling regex
+}
+```
+
+## Vue-router instance static properties
+
+```js
+// vue-router.js -- line 263
+var route = {
+  name: location.name || (record && record.name),
+  meta: (record && record.meta) || {},
+  path: location.path || '/',
+  hash: location.hash || '',
+  query: query,
+  params: location.params || {},
+  fullPath: getFullPath(location, stringifyQuery$$1),
+  matched: record ? formatMatch(record) : []
+};
+```
+
+![](./memo/images/vue-router-instance-static-properties.png)
+
+## Vue instance API Reference ( Options / Data )
+
+<https://vuejs.org/v2/api/#Options-Data>
+
+<https://vuejs.org/v2/api/#name>
+
+## Another benefit of specifying a name option is debugging ( Vue instance name property )
+
+Another benefit of specifying a name option is debugging. Named components result in more helpful warning messages. Also, when inspecting an app in the vue-devtools, unnamed components will show up as <AnonymousComponent>, which isn’t very informative. By providing the name option, you will get a much more informative component tree.
+
+```js
+// Cart.vue
+  export default {
+    name: 'Cart', // if not the name of component will be anonymous ( while debugging )
+    data() {
+      return {
+        msg: 'cart'
+      }
+    }
+  }
+
+//index.js
+export default new Router({
+routes: [
+  {
+    path: '/cart',
+    name: 'Cart',
+    component: Cart
+  }
+]
+})
+```
+
+![](./memo/images/components-option-property-name.gif)
+
+## what's next
+
+implement Header back function
+
+should not display when the current route is home

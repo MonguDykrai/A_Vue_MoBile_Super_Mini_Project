@@ -40,6 +40,33 @@
         selected: null, // value of selected tab-item's id, name can be anything (e.g. value)
         fixed: true
       }
+    },
+    watch: {
+      // Which link has been clicked
+      selected: function (newVal) {
+        let compID = newVal
+        switch (compID) {
+          case 'iHome':
+            /*
+             * this.$route
+             * {name: "HelloWorld", meta: {…}, path: "/", hash: "", query: {…}, …}
+             * 
+             * this.$router
+             * access to the router instance
+             */
+            this.$router.push('/')
+            break;
+          case 'iMember':
+            this.$router.push('/member')
+            break;
+          case 'iCart':
+            this.$router.push('/cart')
+            break;
+          case 'iSearch':
+            this.$router.push('/search')
+            break;
+        }
+      }
     }
   }
 </script>

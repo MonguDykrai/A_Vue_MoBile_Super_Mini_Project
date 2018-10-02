@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="c-home">
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
     <ul>
@@ -333,10 +333,10 @@
 
 <script>
   export default {
-    name: 'HelloWorld',
+    name: 'Home',
     data() {
       return {
-        msg: 'Welcome to Your Vue.js App'
+        msg: 'home'
       }
     }
   }
@@ -344,7 +344,7 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  .hello {
+  .c-home {
     padding-top: 40px;
     padding-bottom: 51px;
   }
