@@ -5,12 +5,21 @@ import App from './App'
 import router from './router'
 import './assets/css/reset.css'
 
-import { Header, Button, Tabbar, TabItem } from 'mint-ui'
+import Mint from 'mint-ui';
+Vue.use(Mint);
 
-Vue.component(Header.name, Header)
-Vue.component(Button.name, Button)
-Vue.component(Tabbar.name, Tabbar)
-Vue.component(TabItem.name, TabItem)
+// import { Header, Button, Tabbar, TabItem, Swipe, SwipeItem} from 'mint-ui'
+
+// 轮播图组件
+// import { Swipe, SwipeItem } from 'mint-ui';
+
+// Vue.component(Swipe.name, Swipe);
+// Vue.component(SwipeItem.name, SwipeItem);
+
+// Vue.component(Header.name, Header)
+// Vue.component(Button.name, Button)
+// Vue.component(Tabbar.name, Tabbar)
+// Vue.component(TabItem.name, TabItem)
 
 Vue.config.productionTip = false
 

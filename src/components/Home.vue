@@ -1,18 +1,32 @@
 <template>
-  <div class="c-home">
-    <h1>{{ msg }}</h1>
 
+  <mt-swipe :auto="4000">
+    <mt-swipe-item v-for="(item, index) in imgList" :key="index">
+      <img :src="item.img" alt="">
+    </mt-swipe-item>
+  </mt-swipe>
     
-  </div>
 </template>
 
 <script>
+
+import axios from "axios";
 export default {
-  name: "Home",
+  name: "Home", 
   data() {
     return {
+      imgList: [],
       msg: "home"
     };
+  },
+  created() {
+    axios({
+      url: "http://www.liulongbin.top:3005/api/getlunbo"
+    }).then(res => {
+      // res.data.message为一个数组
+      this.imgList = res.data.message
+      console.log(this.imgList);
+    });
   }
 };
 </script>
@@ -35,5 +49,12 @@ li {
 
 a {
   color: #42b983;
+}
+.mint-swipe{
+  height: 150px;
+}
+.mint-swipe-item img{
+  width: 100%;
+  height: 100%;
 }
 </style>
