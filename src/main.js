@@ -7,7 +7,7 @@ import './assets/css/reset.css'
 
 import Mint from 'mint-ui';
 Vue.use(Mint);
-
+/* eslint-disable */
 // import { Header, Button, Tabbar, TabItem, Swipe, SwipeItem} from 'mint-ui'
 
 // 轮播图组件

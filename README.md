@@ -125,6 +125,10 @@ Using the iconfont downloaded from iconfont.cn
 
 On the mobile phone side, while clicking the tab item, the background color will flash.
 
+#BUG-003
+body 颜色不能改变
+
+
 ## mt-tab-item
 
 ```js

@@ -9,7 +9,7 @@
         </router-link>
       </mt-header>
 
-    <router-view />
+      <router-view />
 
       <mt-tabbar v-model="selected" :class="{'is-fixed': fixed}" :fixed="fixed">
         <!-- v-model="selected" cannot be deleted -->
@@ -39,6 +39,7 @@
 </template>
 
 <script>
+/* eslint-disable */
 export default {
   name: "App",
   data: function() {
@@ -81,6 +82,9 @@ export default {
 .marginTop {
   padding-top: 40px;
   padding-bottom: 51px;
+}
+body{
+  background-color: red !important;
 }
 h1,
 h2 {
