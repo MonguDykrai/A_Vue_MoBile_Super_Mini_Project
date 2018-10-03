@@ -41,6 +41,7 @@ fetch('http://www.liulongbin.top:3005/api/getnewslist')
 ## Technology stack
 
 [mint-ui](http://mint-ui.github.io/#!/en)
+[mui](http://dev.dcloud.net.cn/mui/)
 
 ## babel-plugin-component
 
@@ -342,3 +343,67 @@ routes: [
 implement Header back function
 
 should not display when the current route is home
+
+## BootstrapVue
+
+yarn add bootstrap-vue
+
+<https://bootstrap-vue.js.org/docs/>
+
+```js
+// main.js
+import bContainer from 'bootstrap-vue/es/components/layout/container'
+import bRow from 'bootstrap-vue/es/components/layout/row'
+import bCol from 'bootstrap-vue/es/components/layout/col'
+
+Vue.component('b-container', bContainer)
+Vue.component('b-row', bRow)
+Vue.component('b-col', bCol)
+
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+
+// equivalent to below
+import { Layout } from 'bootstrap-vue/es/components'
+
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+
+Vue.use(Layout)
+```
+
+```html
+<!-- Home.vue -->
+<template>
+  <div class="c-home">
+    <b-container class="bv-example-row">
+      <b-row>
+        <b-col>1 of 6</b-col>
+        <b-col>2 of 6</b-col>
+        <b-col>3 of 6</b-col>
+        <b-col>4 of 6</b-col>
+        <b-col>5 of 6</b-col>
+        <b-col>6 of 6</b-col>
+      </b-row>
+    </b-container>
+  </div>
+</template>
+```
+
+## Git Repository URL
+
+<https://github.com/MonguDykrai/A_Vue_MoBile_Super_Mini_Project>
+
+## mui
+
+### cdn
+
+css:
+
+<https://cdnjs.cloudflare.com/ajax/libs/mui/3.7.1/css/mui.css>
+<https://cdnjs.cloudflare.com/ajax/libs/mui/3.7.1/css/mui.min.css>
+
+style:
+
+<https://cdnjs.cloudflare.com/ajax/libs/mui/3.7.1/js/mui.js>
+<https://cdnjs.cloudflare.com/ajax/libs/mui/3.7.1/js/mui.min.js>

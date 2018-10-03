@@ -332,6 +332,7 @@
 </template>
 
 <script>
+/* eslint-disable */
   export default {
     name: 'Home',
     data() {
@@ -344,6 +345,8 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  /* @import url(https://cdnjs.cloudflare.com/ajax/libs/mui/3.7.1/css/mui.css); */
+
   .c-home {
     padding-top: 40px;
     padding-bottom: 51px;
