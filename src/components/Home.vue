@@ -10,16 +10,16 @@
     <!-- 九宫格， 数据都是静态的 -->
     <ul class="news">
       <li class="news-list">
-        <a href="#">
+        <router-link to = "/news/list">
           <img src="../assets/images/menu1.png" alt="">
           <div class="news-txt">新闻资讯</div>
-        </a>
+        </router-link>
       </li>
       <li class="news-list">
-        <a href="#">
+        <router-link to="pic/list">
           <img src="../assets/images/menu2.png" alt="">
           <div class="news-txt">图片分享</div>
-        </a>
+        </router-link>
       </li>
       <li class="news-list">
         <a href="#">
@@ -80,9 +80,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-body{
-  background-color: red !important;
-}
+
 .page {
   padding: 0 5px;
   padding-top: 5px;
