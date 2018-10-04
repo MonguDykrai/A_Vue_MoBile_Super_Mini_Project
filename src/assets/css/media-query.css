@@ -1,0 +1,11 @@
+@media screen and (min-width: 320px) {
+  html {
+    font-size:17.06667px;
+  }
+}
+
+@media screen and (min-width: 540px) {
+  html {
+    font-size:28.8px;
+  }
+}

@@ -2,18 +2,24 @@
   <div class="c-home">
     <mt-swipe :auto="4000">
       <mt-swipe-item v-for="(item, index) in imgList" :key="index">
-        <img :src="item.img" :alt="item.id + '.jpg'">
+        <a href="javascript: void(0);">
+          <img :src="item.img" :alt="item.id + '.jpg'">
+        </a>
       </mt-swipe-item>
     </mt-swipe>
+
+    <c-sudoku></c-sudoku>
   </div>
 </template>
 
 <script>
 /* eslint-disable */
 import axios from 'axios'
+import cSudoku from './cSudoku.vue'
 
 export default {
   name: 'Home',
+  components: { cSudoku },
   data: function () {
     return {
       msg: 'home',

@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import './assets/css/reset.css'
+import './assets/css/media-query.css'
 
 import { Header, Button, Tabbar, TabItem, Swipe, SwipeItem } from 'mint-ui'
 

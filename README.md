@@ -116,6 +116,8 @@ Using the iconfont downloaded from iconfont.cn
 
 ## BUG-001
 
+Priority: ☆
+
 ```css
 .mint-tab-item-label {
   font-size: 11px; /* 为啥不管用 */
@@ -124,7 +126,13 @@ Using the iconfont downloaded from iconfont.cn
 
 ## BUG-002
 
+Priority: ☆☆☆
+
 On the mobile phone side, while clicking the tab item, the background color will flash.
+
+Sudoku
+
+Tabbar
 
 ## mt-tab-item
 
@@ -407,3 +415,53 @@ style:
 
 <https://cdnjs.cloudflare.com/ajax/libs/mui/3.7.1/js/mui.js>
 <https://cdnjs.cloudflare.com/ajax/libs/mui/3.7.1/js/mui.min.js>
+
+## media-query
+
+Conclusion: When not matched, *the default font-size of the html tag is 20px?* ( 结论：*未匹配时，html 标签默认的 font-size 为 20px？* )
+
+```css
+@media screen and (max-width: 320px) {
+  html {
+    font-size:17.06667px;
+  }
+}
+
+@media screen and (min-width: 540px) {
+  html {
+    font-size:28.8px;
+  }
+}
+```
+
+screen < 320px ⇒ font-size: 17.0667px;
+
+320px < screen < 540px ⇒ font-size: ( 63 / 3.15 = 20px );
+
+screen \> 540px ⇒ font-size: 28.8px;
+
+![media-query-min-width-max-width.gif](https://upload-images.jianshu.io/upload_images/12334242-f03eab02eba4c862.gif?imageMogr2/auto-orient/strip)
+
+```css
+@media screen and (min-width: 320px) {
+  html {
+    font-size:17.06667px;
+  }
+}
+
+@media screen and (min-width: 540px) {
+  html {
+    font-size:28.8px;
+  }
+}
+```
+
+screen < 320px ⇒ font-size: ( 63 / 3.15 = 20px );
+
+320px < screen < 540px ⇒ font-size: 17.0667px;
+
+screen \> 540px ⇒ font-size: 28.8px;
+
+![media-query-min-width-max-width02.gif](https://upload-images.jianshu.io/upload_images/12334242-24feae6d302d683f.gif?imageMogr2/auto-orient/strip)
+
+<https://codesandbox.io/s/1o1xmyro37>

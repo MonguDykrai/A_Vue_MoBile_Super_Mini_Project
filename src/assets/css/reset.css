@@ -9,8 +9,29 @@ body {
   height: 100%;
 }
 
+body {
+  margin: 0 auto;
+  font-family: -apple-system,Helvetica,sans-serif;
+  min-width: 320px;
+  max-width: 640px;
+}
+
 .clearfix::before, .clearfix::after {
+  display: table;
   content: "";
   clear: both;
-  display: table;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  border: 0;
+}
+
+ul {
+  list-style: none;
 }
