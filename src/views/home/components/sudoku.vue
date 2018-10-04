@@ -1,52 +1,52 @@
 <template>
-  <div class="c-sudoku">
+  <div class="comp-sudoku">
     <ul class="mainmenu clearfix">
       <li>
-        <a href="javascript: void(0);">
+        <router-link to="/news/list">
           <div class="clearfix">
-            <img src="../assets/images/menu1.png" alt="1">
+            <img src="@/assets/images/menu1.png" alt="1">
           </div>
           <span>新闻资讯</span>
-        </a>
+        </router-link>
       </li>
       <li>
-        <a href="javascript: void(0);">
+        <router-link to="/news/list">
           <div class="clearfix">
-            <img src="../assets/images/menu2.png" alt="2">
+            <img src="@/assets/images/menu2.png" alt="2">
           </div>
           <span>图片分享</span>
-        </a>
+        </router-link>
       </li>
       <li>
-        <a href="javascript: void(0);">
+        <router-link to="/">
           <div class="clearfix">
-            <img src="../assets/images/menu3.png" alt="3">
+            <img src="@/assets/images/menu3.png" alt="3">
           </div>
           <span>商品购买</span>
-        </a>
+        </router-link>
       </li>
       <li>
-        <a href="javascript: void(0);">
+        <router-link to="/">
           <div class="clearfix">
-            <img src="../assets/images/menu4.png" alt="4">
+            <img src="@/assets/images/menu4.png" alt="4">
           </div>
           <span>留言反馈</span>
-        </a>
+        </router-link>
       </li>
       <li>
-        <a href="javascript: void(0);">
+        <router-link to="/">
           <div class="clearfix">
-            <img src="../assets/images/menu5.png" alt="5">
+            <img src="@/assets/images/menu5.png" alt="5">
           </div>
           <span>视频专区</span>
-        </a>
+        </router-link>
       </li>
       <li>
-        <a href="javascript: void(0);">
+        <router-link to="/">
           <div class="clearfix">
-            <img src="../assets/images/menu6.png" alt="6">
+            <img src="@/assets/images/menu6.png" alt="6">
           </div><span>联系我们</span>
-        </a>
+        </router-link>
       </li>
     </ul>
   </div>
@@ -55,7 +55,7 @@
 <script>
 /* eslint-disable */
 export default {
-  name: "cSudoku"
+  name: "c-sudoku"
 }
 </script>
 

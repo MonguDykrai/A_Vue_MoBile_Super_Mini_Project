@@ -1,5 +1,5 @@
 <template>
-  <div class="c-home">
+  <div class="view-home">
     <mt-swipe :auto="4000">
       <mt-swipe-item v-for="(item, index) in imgList" :key="index">
         <a href="javascript: void(0);">
@@ -15,11 +15,11 @@
 <script>
 /* eslint-disable */
 import axios from 'axios'
-import cSudoku from './cSudoku.vue'
+import { Sudoku } from '@/views'
 
 export default {
-  name: 'Home',
-  components: { cSudoku },
+  name: 'vw-home',
+  components: { Sudoku },
   data: function () {
     return {
       msg: 'home',
@@ -40,7 +40,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.c-home {
+.view-home {
   padding-top: 40px;
   padding-bottom: 51px;
 }

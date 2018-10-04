@@ -134,6 +134,18 @@ Sudoku
 
 Tabbar
 
+## BUG-003
+
+body 颜色不能改变
+
+## BUG-004
+
+点击 Header 的返回按钮后， Tabbar 对应的链接高亮不同步
+
+点击浏览器返回按钮，高亮不同步
+
+![](./memo/images/link-hightlight-no-sync.gif)
+
 ## mt-tab-item
 
 ```js
