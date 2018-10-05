@@ -1,6 +1,6 @@
 <template>
-  <mt-tabbar v-model="selected" :class="{'is-fixed': fixed}">
-    <!-- v-model="selected" cannot be deleted -->
+  <mt-tabbar v-model="value" :class="{'is-fixed': fixed}">
+    <!-- v-model="value" cannot be deleted -->
     <mt-tab-item id="iHome">
       <i slot="icon" class="iconfont icon-ioshomeoutline"></i>
       Home
@@ -27,12 +27,12 @@ export default {
   props: ['fixed'],
   data: function () {
     return {
-      selected: null, // value of selected tab-item's id, name can be anything (e.g. value)
+      value: 'iHome', // value of selected tab-item's id, name can be anything (e.g. value)
     }
   },
   watch: {
     // Which link has been clicked
-    selected: function (newVal) {
+    value: function (newVal) {
       let compID = newVal
       switch (compID) {
         case 'iHome':
@@ -44,16 +44,16 @@ export default {
             * access to the router instance
             */
           this.$router.push('/')
-          break;
+          break
         case 'iMember':
           this.$router.push('/member')
-          break;
+          break
         case 'iCart':
           this.$router.push('/cart')
-          break;
+          break
         case 'iSearch':
           this.$router.push('/search')
-          break;
+          break
       }
     }
   }

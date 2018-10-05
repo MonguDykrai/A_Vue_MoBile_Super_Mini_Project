@@ -146,6 +146,14 @@ body 颜色不能改变
 
 ![](./memo/images/link-hightlight-no-sync.gif)
 
+## BUG-005
+
+跳转到 newslist 或 piclist 后，点击 home 图标无法返回 home
+
+![](./memo/images/Click-Home-Icon-Cannot-Return-Home.gif)
+
+![](./memo/images/Click-Home-Icon-Cannot-Return-Home-02.gif)
+
 ## mt-tab-item
 
 ```js

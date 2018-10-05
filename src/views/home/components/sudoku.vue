@@ -10,7 +10,7 @@
         </router-link>
       </li>
       <li>
-        <router-link to="/news/list">
+        <router-link to="/pic/list">
           <div class="clearfix">
             <img src="@/assets/images/menu2.png" alt="2">
           </div>
@@ -18,7 +18,7 @@
         </router-link>
       </li>
       <li>
-        <router-link to="/">
+        <router-link to="/goods/list">
           <div class="clearfix">
             <img src="@/assets/images/menu3.png" alt="3">
           </div>
