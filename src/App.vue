@@ -5,7 +5,8 @@
 
       <mt-header title="無題" :style="{fontFamily: 'Microsoft YaHei Light'}" :class="{'is-fixed': fixed}" :fixed="fixed">
         <router-link to="/" slot="left">
-          <mt-button icon="back"></mt-button>
+          <!-- 除了首页，其他页应该都显示 -->
+          <mt-button icon="back" v-if="$route.path != '/'"></mt-button>
         </router-link>
       </mt-header>
 

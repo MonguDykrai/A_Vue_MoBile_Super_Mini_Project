@@ -16,6 +16,7 @@ import picList from '@/views/picShare/List';
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history', // 美化地址栏
   routes: [
     {
       path: '/',

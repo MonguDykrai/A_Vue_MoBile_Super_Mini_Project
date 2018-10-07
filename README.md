@@ -128,6 +128,9 @@ On the mobile phone side, while clicking the tab item, the background color will
 #BUG-003
 body 颜色不能改变
 
+#BUG-004
+移动端应该禁止用户缩放
+
 
 ## mt-tab-item
 
