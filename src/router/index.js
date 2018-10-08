@@ -12,6 +12,8 @@ import GoodsList from '@/views/goods/list/GoodsList'
 Vue.use(Router)
 
 export default new Router({
+  // mode: 'history', // beautify url, remove # from url
+
   routes: [
     {
       path: '/',
