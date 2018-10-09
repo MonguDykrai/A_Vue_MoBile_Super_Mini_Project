@@ -42,6 +42,8 @@ fetch('http://www.liulongbin.top:3005/api/getnewslist')
 
 [mint-ui](http://mint-ui.github.io/#!/en)
 [mui](http://dev.dcloud.net.cn/mui/)
+[axios](https://github.com/axios/axios)
+[element-ui](https://element.eleme.io/#/en-US)
 
 ## babel-plugin-component
 
@@ -153,6 +155,67 @@ body 颜色不能改变
 ![](./memo/images/Click-Home-Icon-Cannot-Return-Home.gif)
 
 ![](./memo/images/Click-Home-Icon-Cannot-Return-Home-02.gif)
+
+## BUG-006
+
+element-ui 样式按需导入报错
+
+```json
+{
+  "presets": [
+    [
+      "env",
+      {
+        "modules": false,
+        "targets": {
+          "browsers": [
+            "> 1%",
+            "last 2 versions",
+            "not ie <= 8"
+          ]
+        }
+      }
+    ],
+    "stage-2",
+    // 按需导入 element-ui
+    [
+      "es2015",
+      {
+        "modules": false
+      }
+    ]
+  ],
+  "plugins": [
+    "transform-vue-jsx",
+    "transform-runtime",
+    [
+      "component",
+      {
+        "libraryName": "mint-ui",
+        "style": true
+      }
+    ],
+    // 按需导入 element-ui
+    [
+      "component",
+      {
+        "libraryName": "element-ui",
+        "styleLibraryName": "theme-chalk"
+      }
+    ]
+  ],
+  "env": {
+    "test": {
+      "presets": [
+        "env",
+        "stage-2"
+      ]
+    }
+  }
+}
+```
+
+![](./memo/images/element-ui-按需导入.png)
 
 ## mt-tab-item
 
@@ -485,3 +548,13 @@ screen \> 540px ⇒ font-size: 28.8px;
 ![media-query-min-width-max-width02.gif](https://upload-images.jianshu.io/upload_images/12334242-24feae6d302d683f.gif?imageMogr2/auto-orient/strip)
 
 <https://codesandbox.io/s/1o1xmyro37>
+
+## component
+
+[input-number](https://element.eleme.io/#/en-US/component/input-number)
+
+![](./memo/images/element-ui-InputNumber.png)
+
+## element-ui
+
+![](./memo/images/element-ui-InputNumber_02.png)

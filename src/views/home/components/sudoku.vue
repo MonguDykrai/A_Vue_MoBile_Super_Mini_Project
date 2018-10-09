@@ -26,11 +26,12 @@
         </router-link>
       </li>
       <li>
-        <router-link to="/">
+        <router-link to="/goods/detail?id=87">
           <div class="clearfix">
             <img src="@/assets/images/menu4.png" alt="4">
           </div>
-          <span>留言反馈</span>
+          <!-- <span>留言反馈</span> -->
+          <span style="font-weight: 700;">商品详情</span>
         </router-link>
       </li>
       <li>

@@ -8,6 +8,7 @@ import Search from '@/views/search/Search'
 import NewsList from '@/views/news/list/NewsList'
 import PicList from '@/views/pic/list/PicList'
 import GoodsList from '@/views/goods/list/GoodsList'
+import GoodsDetail from '@/views/goods/detail/GoodsDetail'
 
 Vue.use(Router)
 
@@ -49,6 +50,11 @@ export default new Router({
       path: '/goods/list',
       name: 'GoodsList',
       component: GoodsList
+    },
+    {
+      path: '/goods/detail',
+      name: 'GoodsDetail',
+      component: GoodsDetail
     }
   ]
 })
