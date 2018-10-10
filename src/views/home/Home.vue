@@ -32,7 +32,7 @@ export default {
     }).then(res => {
       // res.data.message 为一个数组
       this.imgList = res.data.message
-      console.log(this.imgList)
+      // console.log(this.imgList)
     })
   }
 }
@@ -72,4 +72,4 @@ a {
   width: 100%;
   height: 100%;
 }
-</style>
+</style>// eslint-disable-next-line

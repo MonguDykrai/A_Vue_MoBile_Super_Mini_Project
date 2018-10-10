@@ -14,41 +14,22 @@
     data: function () {
       return {
         msg: 'goods-detail',
-        goodsList: [],
         goodsDetail: null,
         num1: 1
       }
     },
     created: function () {
-      axios.get('http://www.liulongbin.top:3005/api/getgoods?pageindex=1')
+      let { id } = this.$route.params
+      axios.get(`http://www.liulongbin.top:3005/api/goods/getinfo/${id}`)
         .then((response) => {
-          let { status, statusText } = response
-          let { message } = response.data
-          let { goodsList, goodsDetail } = this
-          if (status == 200 && statusText == 'OK') {
-            goodsList = message
-            
-            axios.get('http://www.liulongbin.top:3005/api/getgoods?pageindex=2')
-              .then((response) => {
-                let { status, statusText } = response
-                let { message } = response.data
-
-                if (status == 200 && statusText == 'OK') {
-                  goodsList = goodsList.concat(message)
-
-                  let { id } = this.$route.query
-
-                  goodsList.map(function (element, index, array) {
-                    if (element.id == id) {
-                      goodsDetail = element
-                    }
-                  })
-
-                  console.log(goodsDetail)
-
-                  // https://element.eleme.io/#/en-US/component/input-number
-                }
-              })
+          let { status } = response.data
+          if (status == 0) {
+            let message = response.data.message[0]
+            this.goodsDetail = message
+            console.log(this.goodsDetail)
+            // https://element.eleme.io/#/en-US/component/input-number
+          } else if (status == 1) {
+            throw new Error('error occured.')
           }
         })
     },

@@ -52,7 +52,7 @@ export default new Router({
       component: GoodsList
     },
     {
-      path: '/goods/detail',
+      path: '/goods/detail/:id',
       name: 'GoodsDetail',
       component: GoodsDetail
     }

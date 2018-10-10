@@ -6,7 +6,7 @@ import router from './router'
 import './assets/css/reset.css'
 import './assets/css/media-query.css'
 
-import { Header, Button, Tabbar, TabItem, Swipe, SwipeItem } from 'mint-ui'
+import { Header, Button, Tabbar, TabItem, Swipe, SwipeItem, Lazyload, InfiniteScroll } from 'mint-ui'
 
 import { InputNumber } from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
@@ -18,6 +18,9 @@ Vue.component(Tabbar.name, Tabbar)
 Vue.component(TabItem.name, TabItem)
 Vue.component(Swipe.name, Swipe)
 Vue.component(SwipeItem.name, SwipeItem)
+
+Vue.use(Lazyload)
+Vue.use(InfiniteScroll)
 
 // element-ui
 Vue.component(InputNumber.name, InputNumber)

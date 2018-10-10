@@ -558,3 +558,36 @@ screen \> 540px ⇒ font-size: 28.8px;
 ## element-ui
 
 ![](./memo/images/element-ui-InputNumber_02.png)
+
+## Go previous view ( click header component arrow sign back to previous view )
+
+1. must to use the [native qualifier](https://vuejs.org/v2/guide/components-custom-events.html#Binding-Native-Events-to-Components) to qualify the click event, or will not trigger function goPreviousView
+
+2. the property of component router-link cannot be omitted.
+
+```html
+<template>
+  <mt-header title="無題" :style="{fontFamily: 'Microsoft YaHei Light'}" :class="{'is-fixed': fixed}">
+    <router-link to="" @click.native="goPreviousView" slot="left">
+      <!-- must to use the native qualifier to qualify the click event, or will not trigger function goPreviousView -->
+      <mt-button icon="back" v-if="$route.path != '/'"></mt-button>
+    </router-link>
+  </mt-header>
+</template>
+
+<script>
+/* eslint-disable */
+  export default {
+    name: 'c-header',
+    props: ['fixed'],
+    methods: {
+      goPreviousView: function () {
+        this.$router.go(-1) // equivalent to `this.$router.back()`
+      }
+    }
+  }
+</script>
+
+<style scoped>
+</style>
+```

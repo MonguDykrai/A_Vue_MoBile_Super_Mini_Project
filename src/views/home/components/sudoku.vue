@@ -26,12 +26,11 @@
         </router-link>
       </li>
       <li>
-        <router-link to="/goods/detail?id=87">
+        <router-link to="/">
           <div class="clearfix">
             <img src="@/assets/images/menu4.png" alt="4">
           </div>
-          <!-- <span>留言反馈</span> -->
-          <span style="font-weight: 700;">商品详情</span>
+          <span>留言反馈</span>
         </router-link>
       </li>
       <li>
@@ -99,4 +98,4 @@ export default {
 a:active {
   background-color: palegreen;
 }
-</style>
+</style>// eslint-disable-next-line
