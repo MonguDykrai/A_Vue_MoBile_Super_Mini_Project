@@ -7,6 +7,16 @@ import './assets/css/reset.css'
 import './assets/css/media-query.css'
 
 import { Header, Button, Tabbar, TabItem, Swipe, SwipeItem } from 'mint-ui'
+import { InfiniteScroll } from "mint-ui";
+import { Lazyload } from 'mint-ui';
+Vue.use(Lazyload);
+
+//import MintUi from 'mint-ui';
+//Vue.use(MintUi);
+
+
+
+Vue.use(InfiniteScroll);
 
 Vue.component(Header.name, Header)
 Vue.component(Button.name, Button)
