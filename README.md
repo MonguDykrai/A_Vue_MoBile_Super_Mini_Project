@@ -217,6 +217,10 @@ element-ui 样式按需导入报错
 
 ![](./memo/images/element-ui-按需导入.png)
 
+## BUG-007
+
+![](./memo/images/Conponent_InputNumber_Bug.gif)
+
 ## mt-tab-item
 
 ```js
@@ -429,12 +433,6 @@ routes: [
 
 ![](./memo/images/components-option-property-name.gif)
 
-## what's next
-
-implement Header back function
-
-should not display when the current route is home
-
 ## BootstrapVue
 
 yarn add bootstrap-vue
@@ -591,3 +589,9 @@ screen \> 540px ⇒ font-size: 28.8px;
 <style scoped>
 </style>
 ```
+
+## what's next
+
+fix BUG-004, BUG-005
+
+etc.

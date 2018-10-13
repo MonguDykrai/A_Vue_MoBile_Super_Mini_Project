@@ -1,7 +1,15 @@
 <template>
   <div class="view-goods-detail">
-    {{ msg }}
-    <el-input-number v-model="num1" @change="handleChange" :min="1" :max="10"></el-input-number>
+    <div class="comp-carousel"></div>
+
+    <div class="comp-info">
+      <div class="head"></div>
+      <div class="body">
+        <el-input-number v-model="num1" @change="handleChange" :min="1" :max="stockQuantity"></el-input-number>
+      </div>
+    </div>
+
+    <div class="comp-param"></div>
   </div>
 </template>
 
@@ -13,9 +21,9 @@
     name: 'vm-goods-detail',
     data: function () {
       return {
-        msg: 'goods-detail',
         goodsDetail: null,
-        num1: 1
+        num1: 1,
+        stockQuantity: 0
       }
     },
     created: function () {
@@ -27,6 +35,10 @@
             let message = response.data.message[0]
             this.goodsDetail = message
             console.log(this.goodsDetail)
+
+            let { stock_quantity } = this.goodsDetail
+            this.stockQuantity = stock_quantity
+
             // https://element.eleme.io/#/en-US/component/input-number
           } else if (status == 1) {
             throw new Error('error occured.')
@@ -45,5 +57,20 @@
   .view-goods-detail {
     padding-top: 40px;
     padding-bottom: 51px;
+
+    margin-left: 6px;
+    margin-right: 6px;
+
+    background-color: #f1d9e1;
+  }
+
+  .comp-info > .head {
+    height: 50px;
+    background-color: rebeccapurple;
+  }
+
+  .comp-info > .body {
+    height: 50px;
+    background-color: #72d399;
   }
 </style>// eslint-disable-next-line
